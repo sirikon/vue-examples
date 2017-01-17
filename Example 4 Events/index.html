@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Example 4</title>
+        <style>
+            #app {
+                width: 600px;
+                height: 600px;
+                background-color: lightgrey;
+                position: relative;
+            }
+            .box {
+                position: absolute;
+                height: 50px;
+                width: 50px;
+                background-color: orangered;
+                transition: all 0.15s ease;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div
+            id="app"
+            v-on:keydown.left="addX(-50)"
+            v-on:keydown.right="addX(50)"
+            v-on:keydown.down="addY(50)"
+            v-on:keydown.up="addY(-50)"
+            tabindex="0">
+
+            <div class="box" v-bind:style="{top: y + 'px', left: x + 'px'}"></div>
+        </div>
+
+        <script src="../libs/vue.js"></script>
+        <script type="text/javascript">
+
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    x: 0,
+                    y: 0
+                },
+                methods: {
+                    addX: function(value) {
+                        this.x += value;
+                        if (this.x >= 550) this.x = 550;
+                        if (this.x <= 0) this.x = 0;
+                    },
+                    addY: function(value) {
+                        this.y += value;
+                        if (this.y >= 550) this.y = 550;
+                        if (this.y <= 0) this.y = 0;
+                    }
+                }
+            });
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Example 3</title>
+    </head>
+    <body>
+        
+        <div id="app1">
+            <input type="text" v-model="message">
+            <div>{{message}}</div>
+        </div>
+
+        <div id="app2">
+            <input type="text" v-model="message">
+            <div>{{message}}</div>
+        </div>
+
+        <script src="../libs/vue.js"></script>
+        <script type="text/javascript">
+
+            var data = {
+                message: 'Hello World'
+            };
+
+            var vm1 = new Vue({
+                el: '#app1',
+                data: data
+            });
+
+            var vm2 = new Vue({
+                el: '#app2',
+                data: data
+            });
+
+        </script>
+    </body>
+</html>

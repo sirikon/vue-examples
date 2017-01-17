@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Example 1</title>
+    </head>
+    <body>
+        
+        <div id="app">
+            <input type="text" v-model="message">
+            <div>{{message}}</div>
+        </div>
+
+        <script src="../libs/vue.js"></script>
+        <script type="text/javascript">
+
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hello World'
+                }
+            });
+
+        </script>
+    </body>
+</html>

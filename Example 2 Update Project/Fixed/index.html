@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Example 2</title>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" v-model="taskName">
+            <button type="button" v-on:click="saveTask">Guardar</button>
+            <ul>
+                <li v-for="task in tasks">
+                    {{ task }}
+                </li>
+            </ul>
+        </div>
+
+        <script src="../../libs/vue.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
