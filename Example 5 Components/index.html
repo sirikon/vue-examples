@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Example 5</title>
+        <link rel="stylesheet" href="../libs/bulma.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- APP -->
+
+        <div id="app" class="container">
+            <div class="columns">
+                <div class="column">
+                    <search-bar v-model="searchText"></search-bar>
+                </div>
+            </div>
+            <people-list v-bind:people="filteredPeople"></people-list>
+        </div>
+
+        <!-- TEMPLATES -->
+
+        <!-- Search Bar -->
+        <script type="text/x-template" id="seachBar_template">
+            <input
+                class="input"
+                type="text"
+                placeholder="Search..."
+                v-bind:value="value"
+                v-on:input="updateValue($event.target.value)" />
+        </script>
+
+        <!-- People List -->
+        <script type="text/x-template" id="peopleList_template">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="person in people">                       
+                        <td>{{ person.id }}</td>
+                        <td>{{ person.name }}</td>
+                        <td>{{ person.surname }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </script>
+
+        <!-- TEMPLATES -->
+        <script src="../libs/vue.js"></script>
+        <script src="data.js"></script>
+        <script src="components/searchBar.js"></script>
+        <script src="components/peopleList.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
