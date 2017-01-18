@@ -1,17 +1,21 @@
 <html>
     <head>
         <title>Example 6</title>
+        <link rel="stylesheet" href="../libs/bulma.css">
     </head>
     <body>
         
-        <div id="app">
-            <h1>Router Example</h1>
-            <p>
-                <router-link to="/">HOME</router-link>
-                <router-link to="/about">About</router-link>
-                <router-link to="/contact">Contact</router-link>
-            </p>
+        <div id="app" class="container">
+            <h1 class="title is-1">Router Example</h1>
+            <div class="nav">
+                <div class="nav-left nav-menu">
+                    <router-link class="nav-item is-tab" active-class="is-active" to="/" exact>HOME</router-link>
+                    <router-link class="nav-item is-tab" active-class="is-active" to="/about">About</router-link>
+                    <router-link class="nav-item is-tab" active-class="is-active" to="/contact">Contact</router-link>
+                </div>
+            </div>
             <router-view></router-view>
+            
         </div>
 
         <script src="../libs/vue.js"></script>
