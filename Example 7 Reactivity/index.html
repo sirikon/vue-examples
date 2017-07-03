@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Example 1</title>
+        <style>
+            [v-cloak] { display: none; }
+        </style>
+    </head>
+    <body>
+        
+        <div id="app" v-cloak>
+            <input type="text" v-model="firstName" placeholder="First Name">
+            <input type="text" v-model="lastName" placeholder="Last Name">
+            <input type="checkbox" v-model="includeLastName">
+            <input type="text" v-model="phoneNumber" placeholder="Phone Number">
+            <h3>{{ fullName }}</h3>
+        </div>
+
+        <script src="../libs/vue.js"></script>
+        <script type="text/javascript">
+
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    firstName: '',
+                    lastName: '',
+                    phoneNumber: '',
+                    includeLastName: true
+                },
+                computed: {
+                    fullName: function() {
+                        console.log('FullName *could* have changed!')
+                        if (this.includeLastName) {
+                            return this.firstName + ' ' + this.lastName
+                        } else{
+                            return this.firstName
+                        }
+                    }
+                }
+            });
+
+        </script>
+    </body>
+</html>
