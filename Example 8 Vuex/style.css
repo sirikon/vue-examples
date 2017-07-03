@@ -1,0 +1,25 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#app {
+    font-size: 2em;
+    text-align: center;
+}
+
+.buttons {
+    margin-top: 15px;
+}
+
+.even {
+    color: #d35400;
+}
+
+.odd {
+    color: #8e44ad;
+}

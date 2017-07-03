@@ -3,11 +3,13 @@
 Vue.component('counter', {
     template: `
         <div id="app">
-            Clicked: {{ $store.state.count }} times, count is {{ evenOrOdd }}.
-            <button @click="increment">+</button>
-            <button @click="decrement">-</button>
-            <button @click="incrementIfOdd">Increment if odd</button>
-            <button @click="incrementAsync">Increment async</button>
+            Clicked: <b>{{ $store.state.count }}</b> times, count is <b :class="evenOrOdd">{{ evenOrOdd }}</b>.
+            <div class="buttons">
+                <button @click="increment" class="button is-primary">+</button>
+                <button @click="decrement" class="button is-primary">-</button>
+                <button @click="incrementIfOdd" class="button is-primary">Increment if odd</button>
+                <button @click="incrementAsync" class="button is-primary">Increment async</button>
+            </div>
         </div>`,
     computed: Vuex.mapGetters([
         'evenOrOdd'
